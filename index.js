@@ -1,5 +1,5 @@
-//console.log(`Hello`);
-//console.log("Mother");
+console.log(`Hello`);
+console.log("Mother");
 
 //window.alert(`This is an alert!`);
 //window.alert(`Porsche`);
@@ -14,23 +14,30 @@
    a;dlskfja;klfj
 */
 
-/*
+
 let username;
 
 document.getElementById("mySubmit").onclick = function(){
    username = document.getElementById("myText").value;
    document.getElementById("myH1").textContent = `Hello ${username}`;
 }
-*/
 
-let x = "pizza";
-let y = true;
-let z = true;
+const ROWS = 6;
+const COLUMNS = 5;
 
-x = Number(x);
-y = String(y);
-z = Boolean(z);
 
-console.log(x, typeof x); //Nan (Not a Number) 'number'
-console.log(y, typeof y); //pizza string
-console.log(z, typeof z); //true 'boolean
+document.getElementById("increment").onclick = function (){
+   number = parseInt(document.getElementById("numCount").textContent);
+   number += 1
+   document.getElementById("numCount").textContent = number;
+}
+
+gridContainer = document.getElementById("wordleGrid");
+for (let r = 0; r < ROWS; r++) {
+  for (let c = 0; c < COLUMNS; c++) {
+    const cell = document.createElement('div');
+    cell.classList.add('cell');
+    cell.id = `cell-${r}-${c}`; // Optional ID for referencing later
+    gridContainer.appendChild(cell);
+  }
+}
